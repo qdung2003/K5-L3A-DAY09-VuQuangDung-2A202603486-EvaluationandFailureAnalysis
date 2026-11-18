@@ -17,6 +17,23 @@ ITEMS = Path("data/eval/eval_set_v1.jsonl")
 LABELS = Path("data/eval/labels_v1.json")
 SOURCE = Path("data/public_claims.jsonl")
 VERSION = "v1"
+# Modes each public claim is built to exercise. Codes only; names live in the taxonomy.
+FAILURE_MODES = {
+    "C-001": ["FM-01"],
+    "C-002": ["FM-03"],
+    "C-003": ["FM-01"],
+    "C-004": ["FM-02"],
+    "C-005": ["FM-09", "FM-01"],
+    "C-006": ["FM-06"],
+    "C-007": ["FM-02"],
+    "C-008": ["FM-03", "FM-08", "FM-05"],
+    "C-009": ["FM-03"],
+    "C-010": ["FM-01"],
+    "C-011": ["FM-07"],
+    "C-012": ["FM-07"],
+    "C-013": ["FM-05"],
+    "C-014": ["FM-04", "FM-05"],
+}
 ITEMS_V2 = Path("data/eval/eval_set_v2.jsonl")
 LABELS_V2 = Path("data/eval/labels_v2.json")
 PACK = Path("data/eval/adversarial_v2.json")
@@ -46,8 +63,7 @@ def build(source: Path = SOURCE) -> tuple[int, int]:
         items.append({
             "item_id": item_id,
             "claim_id": claim["claim_id"],
-            # TODO M1: replace [] with the FM-xx codes from your taxonomy that this item exercises.
-            "failure_modes": [],
+            "failure_modes": list(FAILURE_MODES.get(claim["claim_id"], [])),
             "provenance": {"source": "lab8_public", "matrix_id": claim.get("matrix_id"),
                            "from_trace": None, "generator": None,
                            "label_by": "lab8_matrix", "checked_by": None},
