@@ -1,0 +1,12 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(python -m lab9.judge --csv data/eval/judge_tone_public.csv --audit 5)",
+      "Bash(python -m lab9.judge --csv data/eval/judge_helpful_public.csv --audit 5)",
+      "Bash(PYTHONIOENCODING=utf-8 python -m lab9.trace_case --shape seeded_regression --claim C-002 --seed 11)",
+      "Read(//d/AI/code/P-129/**)",
+      "Bash(python -m lab9.demo_ui --open)",
+      "Bash(git check-ignore *)"
+    ]
+  }
+}
