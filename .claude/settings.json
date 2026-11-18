@@ -8,7 +8,28 @@
       "Bash(python -m lab9.demo_ui --open)",
       "Bash(git check-ignore *)",
       "Bash(git ls-tree *)",
-      "Bash(git ls-remote *)"
+      "Bash(git ls-remote *)",
+      "Bash(git push *)",
+      "Bash(echo \"SMOKE:$?\")",
+      "Bash(echo \"V1:$?\")",
+      "Bash(echo \"V2:$?\")",
+      "Bash(echo \"TEST:$?\")",
+      "Bash(python -m lab9.gate --pr reports/eval_fixed.json --baseline reports/baseline_v1.json)",
+      "Bash(echo \"FIXED:$?\")",
+      "Bash(python -m lab9.gate --pr reports/eval_seeded_regression.json --baseline reports/baseline_v1.json)",
+      "Bash(echo \"SEEDED:$?\")",
+      "Bash(python -m lab9.gate --pr reports/eval_slice_regression.json --baseline reports/baseline_v2.json --spec config/metric_spec_v2.yaml)",
+      "Bash(echo \"SLICE:$?\")",
+      "Bash(echo \"LAB8_DIRTY:$?\")",
+      "Bash(gh run *)",
+      "Bash(python -c \"import urllib.request; print\\(urllib.request.urlopen\\('https://api.github.com', timeout=15\\).status\\)\")",
+      "Bash(winget install *)",
+      "Bash(powershell.exe -NoProfile -Command \"winget install --id GitHub.cli -e --accept-source-agreements --accept-package-agreements\")",
+      "Bash(choco install *)",
+      "Bash(python -)",
+      "Bash(python -m pytest -q)",
+      "Bash(python -m pytest -q -p no:cacheprovider)",
+      "Bash(python -m pytest -q tests/test_lab9_evalset.py)"
     ]
   }
 }

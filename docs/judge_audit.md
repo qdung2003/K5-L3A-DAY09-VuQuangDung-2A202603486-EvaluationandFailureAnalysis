@@ -20,6 +20,10 @@ Ma trận helpful: tp 9, fp 0, fn 21, tn 70. Precision cao vì hầu như không
 | 4 | H-042 | FAIL | PASS | người | Có số tiền, hạn 3–5 ngày, tone đạt; judge phạt oan |
 | 5 | H-051 | FAIL | PASS | người | "LogiX đã refund 90.000đ" là câu đạt; judge quá khắt |
 
+## Hành động sửa rubric
+- Bổ sung quy tắc: câu xác nhận đã hoàn tiền phải nêu đúng số tiền và thời hạn về; câu chỉ nói "đang xử lý / chờ thêm" không được chấm PASS tone hỗ trợ.
+- Bổ sung ví dụ phủ định: xưng hô "bạn ơi", "nha", "anh check giúp em" là tone lệch, chấm FAIL dù nội dung đúng.
+
 ## Kết luận
 - `helpful` bị loại: κ 0.375 và recall 0.3, dưới sàn. Judge gần như luôn PASS nên không bắt được câu vô ích. Không được dùng làm gate.
 - `tone_ok` đạt cả ba sàn, được dùng cho theo dõi, không thay grader tiền và approval.
