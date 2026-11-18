@@ -6,7 +6,9 @@
       "Bash(PYTHONIOENCODING=utf-8 python -m lab9.trace_case --shape seeded_regression --claim C-002 --seed 11)",
       "Read(//d/AI/code/P-129/**)",
       "Bash(python -m lab9.demo_ui --open)",
-      "Bash(git check-ignore *)"
+      "Bash(git check-ignore *)",
+      "Bash(git ls-tree *)",
+      "Bash(git ls-remote *)"
     ]
   }
 }
